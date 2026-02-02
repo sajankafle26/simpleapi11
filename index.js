@@ -13,11 +13,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello, Render!" });
 });
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000, // try connecting for 5 seconds
-})
+mongoose.connect(process.env.MONGO_URI)
 // Example dynamic endpoint
 app.get("/hello/:name", (req, res) => {
   const { name } = req.params;
